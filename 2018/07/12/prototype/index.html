@@ -18,26 +18,28 @@
   
   
   <title>原型、原型链 | Hexo</title>
-  <meta name="keywords" content="js">
+  <meta name="description" content="函数声明  1. 字面量        var f1 = function(){}; 2. 关键词        function f2 = function(){}; 3. 构造函数      var f3 = new Function();归根结底都是通过new Function 的方式来创建的，js中一切皆对象，对象又分函数对象和普通对象，简单来说通过new Function创建的就称之">
+<meta name="keywords" content="js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="原型、原型链">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2018&#x2F;07&#x2F;12&#x2F;prototype&#x2F;index.html">
+<meta property="og:url" content="http:&#x2F;&#x2F;xuyangzhou.github.io&#x2F;2018&#x2F;07&#x2F;12&#x2F;prototype&#x2F;index.html">
 <meta property="og:site_name" content="xuyz-blog">
+<meta property="og:description" content="函数声明  1. 字面量        var f1 = function(){}; 2. 关键词        function f2 = function(){}; 3. 构造函数      var f3 = new Function();归根结底都是通过new Function 的方式来创建的，js中一切皆对象，对象又分函数对象和普通对象，简单来说通过new Function创建的就称之">
 <meta property="og:locale" content="h-Hans">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2018&#x2F;07&#x2F;public&#x2F;images&#x2F;prototype.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2018&#x2F;07&#x2F;public&#x2F;images&#x2F;prototype2.jpg">
-<meta property="og:updated_time" content="2019-11-08T09:03:00.022Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;xuyangzhou.github.io&#x2F;xyzblog&#x2F;2018&#x2F;07&#x2F;12&#x2F;prototype&#x2F;prototype.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;xuyangzhou.github.io&#x2F;xyzblog&#x2F;2018&#x2F;07&#x2F;12&#x2F;prototype&#x2F;prototype2.jpg">
+<meta property="og:updated_time" content="2019-11-09T15:32:48.426Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2018&#x2F;07&#x2F;public&#x2F;images&#x2F;prototype.jpg">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;xuyangzhou.github.io&#x2F;xyzblog&#x2F;2018&#x2F;07&#x2F;12&#x2F;prototype&#x2F;prototype.jpg">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://yoursite.com/2018/07/12/prototype/index.html">
+  <link rel="canonical" href="http://xuyangzhou.github.io/2018/07/12/prototype/index.html">
   
     <link rel="alternate" href="/atom.xml" title="xuyz-blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png" type="image/x-icon">
   
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/xyzblog/css/style.css">
   
   
   
@@ -53,7 +55,7 @@
       
       <div class="profile-block text-center">
         <a id="avatar" href="https://github.com/cofess" target="_blank">
-          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+          <img class="img-circle img-rotate" src="/xyzblog/images/avatar.jpg" width="200" height="200">
         </a>
         <h2 id="name" class="hidden-xs hidden-sm">昵称</h2>
         <h3 id="title" class="hidden-xs hidden-sm hidden-md">Web Developer &amp; Designer</h3>
@@ -97,7 +99,7 @@
         
         
         <li class="menu-item menu-item-home">
-          <a href="/.">
+          <a href="/xyzblog/.">
             
             <i class="icon icon-home-fill"></i>
             
@@ -107,7 +109,7 @@
         
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives">
+          <a href="/xyzblog/archives">
             
             <i class="icon icon-archives-fill"></i>
             
@@ -117,7 +119,7 @@
         
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories">
+          <a href="/xyzblog/categories">
             
             <i class="icon icon-folder"></i>
             
@@ -127,7 +129,7 @@
         
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags">
+          <a href="/xyzblog/tags">
             
             <i class="icon icon-tags"></i>
             
@@ -137,7 +139,7 @@
         
         
         <li class="menu-item menu-item-repository">
-          <a href="/repository">
+          <a href="/xyzblog/repository">
             
             <i class="icon icon-project"></i>
             
@@ -147,7 +149,7 @@
         
         
         <li class="menu-item menu-item-books">
-          <a href="/books">
+          <a href="/xyzblog/books">
             
             <i class="icon icon-book-fill"></i>
             
@@ -157,7 +159,7 @@
         
         
         <li class="menu-item menu-item-links">
-          <a href="/links">
+          <a href="/xyzblog/links">
             
             <i class="icon icon-friendship"></i>
             
@@ -167,7 +169,7 @@
         
         
         <li class="menu-item menu-item-about">
-          <a href="/about">
+          <a href="/xyzblog/about">
             
             <i class="icon icon-cup-fill"></i>
             
@@ -188,7 +190,7 @@
         
         <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
         
-        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        <li><a href="/xyzblog/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
         
     </ul>
 
@@ -216,7 +218,7 @@
   <div class="widget">
     <h3 class="widget-title">Categories</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%83%E6%83%85%E7%89%A9%E8%AF%AD/">心情物语</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/xyzblog/categories/hexo/">hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/xyzblog/categories/js/">js</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/xyzblog/categories/%E5%BF%83%E6%83%85%E7%89%A9%E8%AF%AD/">心情物语</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/xyzblog/categories/%E7%AC%94%E8%AE%B0/">笔记</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -226,7 +228,7 @@
   <div class="widget">
     <h3 class="widget-title">Tags</h3>
     <div class="widget-body">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/" rel="tag">js</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%83%E6%83%85%E7%89%A9%E8%AF%AD/" rel="tag">心情物语</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/xyzblog/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/xyzblog/tags/js/" rel="tag">js</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/xyzblog/tags/%E5%BF%83%E6%83%85%E7%89%A9%E8%AF%AD/" rel="tag">心情物语</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/xyzblog/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -236,7 +238,7 @@
   <div class="widget">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget-body tagcloud">
-      <a href="/tags/hexo/" style="font-size: 13px;">hexo</a> <a href="/tags/js/" style="font-size: 14px;">js</a> <a href="/tags/%E5%BF%83%E6%83%85%E7%89%A9%E8%AF%AD/" style="font-size: 13px;">心情物语</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 13px;">笔记</a>
+      <a href="/xyzblog/tags/hexo/" style="font-size: 13px;">hexo</a> <a href="/xyzblog/tags/js/" style="font-size: 14px;">js</a> <a href="/xyzblog/tags/%E5%BF%83%E6%83%85%E7%89%A9%E8%AF%AD/" style="font-size: 13px;">心情物语</a> <a href="/xyzblog/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 13px;">笔记</a>
     </div>
   </div>
 
@@ -245,7 +247,7 @@
   <div class="widget">
     <h3 class="widget-title">Archive</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/xyzblog/archives/2019/11/">November 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/xyzblog/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/xyzblog/archives/2018/07/">July 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/xyzblog/archives/2017/07/">July 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/xyzblog/archives/2017/04/">April 2017</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -261,10 +263,10 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/js/">js</a>
+                <a class="category-link" href="/xyzblog/categories/js/">js</a>
               </p>
               <p class="item-title">
-                <a href="/2019/11/08/Array-methods/" class="title">js 数组方法总结 之 一道面试题引发的血案</a>
+                <a href="/xyzblog/2019/11/08/Array-methods/" class="title">js 数组方法总结 之 一道面试题引发的血案</a>
               </p>
               <p class="item-date">
                 <time datetime="2019-11-08T02:09:31.000Z" itemprop="datePublished">2019-11-08</time>
@@ -276,10 +278,10 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+                <a class="category-link" href="/xyzblog/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
               </p>
               <p class="item-title">
-                <a href="/2019/03/26/virtual-dom/" class="title">virtual-dom</a>
+                <a href="/xyzblog/2019/03/26/virtual-dom/" class="title">virtual-dom</a>
               </p>
               <p class="item-date">
                 <time datetime="2019-03-26T01:52:30.000Z" itemprop="datePublished">2019-03-26</time>
@@ -291,10 +293,10 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/js/">js</a>
+                <a class="category-link" href="/xyzblog/categories/js/">js</a>
               </p>
               <p class="item-title">
-                <a href="/2018/07/13/closure/" class="title">闭包</a>
+                <a href="/xyzblog/2018/07/13/closure/" class="title">闭包</a>
               </p>
               <p class="item-date">
                 <time datetime="2018-07-13T06:31:27.000Z" itemprop="datePublished">2018-07-13</time>
@@ -306,10 +308,10 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/js/">js</a>
+                <a class="category-link" href="/xyzblog/categories/js/">js</a>
               </p>
               <p class="item-title">
-                <a href="/2018/07/12/prototype/" class="title">原型、原型链</a>
+                <a href="/xyzblog/2018/07/12/prototype/" class="title">原型、原型链</a>
               </p>
               <p class="item-date">
                 <time datetime="2018-07-12T07:10:06.000Z" itemprop="datePublished">2018-07-12</time>
@@ -321,10 +323,10 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/hexo/">hexo</a>
+                <a class="category-link" href="/xyzblog/categories/hexo/">hexo</a>
               </p>
               <p class="item-title">
-                <a href="/2017/07/24/hello-world/" class="title">hexo command</a>
+                <a href="/xyzblog/2017/07/24/hello-world/" class="title">hexo command</a>
               </p>
               <p class="item-date">
                 <time datetime="2017-07-24T02:09:31.000Z" itemprop="datePublished">2017-07-24</time>
@@ -360,34 +362,32 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2018/07/12/prototype/" class="article-date">
+	<a href="/xyzblog/2018/07/12/prototype/" class="article-date">
 	  <time datetime="2018-07-12T07:10:06.000Z" itemprop="datePublished">2018-07-12</time>
 	</a>
 </span>
         
   <span class="article-category">
     <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/js/">js</a>
+    <a class="article-category-link" href="/xyzblog/categories/js/">js</a>
   </span>
 
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/js/" rel="tag">js</a>
+	<a class="article-tag-link" href="/xyzblog/tags/js/" rel="tag">js</a>
   </span>
 
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/07/12/prototype/#comments" class="article-comment-link">Comments</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/xyzblog/2018/07/12/prototype/#comments" class="article-comment-link">Comments</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <p><img src="../../public/images/prototype.jpg" alt="图片来源于网络如有侵权请联系删除"></p>
-<a id="more"></a>
-
+        <p><img src="/xyzblog/2018/07/12/prototype/prototype.jpg" alt="原型链"></p>
 <blockquote>
 <p>函数声明</p>
 </blockquote>
@@ -467,7 +467,7 @@ console.log(cat.constructor); // ƒ Animal(name){ this.name = name; }</code></pr
 <blockquote>
 <p>大招</p>
 </blockquote>
-<p>如果以上内容还是不太明白，我自己做了张注解图（线条有点多而杂，见谅~~），以及代码案例帮助理解<br><img src="../../public/images/prototype2.jpg" alt="图1.jpg"></p>
+<p>如果以上内容还是不太明白，我自己做了张注解图（线条有点多而杂，见谅~~），以及代码案例帮助理解<br><img src="/xyzblog/2018/07/12/prototype/prototype2.jpg" alt="图1.jpg"></p>
 <pre><code>// 几个概念： 
 // 普通对象是new Object而来的，所以 它的构造函数就是Object
 // 函数对象是new Function而来的，所以 它的构造函数就是Function，Function、Object是new Function而来的
@@ -498,7 +498,7 @@ Function.prototype.__proto__ === Object.prototype; // true</code></pre><p>关于
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://yoursite.com/2018/07/12/prototype/" title="原型、原型链" target="_blank" rel="external">http://yoursite.com/2018/07/12/prototype/</a>
+      <a href="http://xuyangzhou.github.io/2018/07/12/prototype/" title="原型、原型链" target="_blank" rel="external">http://xuyangzhou.github.io/2018/07/12/prototype/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -513,7 +513,7 @@ Function.prototype.__proto__ === Object.prototype; // true</code></pre><p>关于
     <figure class="media">
       <div class="media-left">
         <a href="https://github.com/cofess" target="_blank" class="img-burn thumb-sm visible-lg">
-          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+          <img src="/xyzblog/images/avatar.jpg" class="img-rounded w-full" alt="">
         </a>
       </div>
       <div class="media-body">
@@ -545,12 +545,12 @@ Function.prototype.__proto__ === Object.prototype; // true</code></pre><p>关于
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/2018/07/13/closure/" title="闭包"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+      <a href="/xyzblog/2018/07/13/closure/" title="闭包"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
     </li>
     
     
     <li class="next">
-      <a href="/2017/07/24/hello-world/" title="hexo command"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/xyzblog/2017/07/24/hello-world/" title="hexo command"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
@@ -585,14 +585,14 @@ Function.prototype.__proto__ === Object.prototype; // true</code></pre><p>关于
           <div class="tab-content">
             <div role="tabpanel" class="tab-pane fade active in" id="alipay">
               <div class="donate-payimg">
-                <img src="/images/donate/alipayimg.png" alt="Scan Qrcode" title="Scan" />
+                <img src="/xyzblog/images/donate/alipayimg.png" alt="Scan Qrcode" title="Scan" />
               </div>
               <p class="text-muted mv">Scan this qrcode</p>
               <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
             </div>
             <div role="tabpanel" class="tab-pane fade" id="wechatpay">
               <div class="donate-payimg">
-                <img src="/images/donate/wechatpayimg.png" alt="Scan Qrcode" title="Scan" />
+                <img src="/xyzblog/images/donate/wechatpayimg.png" alt="Scan Qrcode" title="Scan" />
               </div>
               <p class="text-muted mv">Scan this qrcode</p>
               <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
@@ -631,7 +631,7 @@ Function.prototype.__proto__ === Object.prototype; // true</code></pre><p>关于
         
         <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
         
-        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        <li><a href="/xyzblog/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
         
     </ul>
 
@@ -646,8 +646,8 @@ Function.prototype.__proto__ === Object.prototype; // true</code></pre><p>关于
 <script>
 window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 </script>
-<script src="/js/plugin.min.js"></script>
-<script src="/js/application.js"></script>
+<script src="/xyzblog/js/plugin.min.js"></script>
+<script src="/xyzblog/js/application.js"></script>
 
     <script>
 (function (window) {
@@ -659,13 +659,13 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
             TAGS: 'Tags',
             UNTITLED: '(Untitled)',
         },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
+        ROOT_URL: '/xyzblog/',
+        CONTENT_URL: '/xyzblog/content.json',
     };
     window.INSIGHT_CONFIG = INSIGHT_CONFIG;
 })(window);
 </script>
-<script src="/js/insight.js"></script>
+<script src="/xyzblog/js/insight.js"></script>
 
 
 
