@@ -26,11 +26,11 @@
 <meta property="og:site_name" content="xuyz-blog">
 <meta property="og:description" content="函数声明  1. 字面量        var f1 = function(){}; 2. 关键词        function f2 = function(){}; 3. 构造函数      var f3 = new Function();归根结底都是通过new Function 的方式来创建的，js中一切皆对象，对象又分函数对象和普通对象，简单来说通过new Function创建的就称之">
 <meta property="og:locale" content="h-Hans">
-<meta property="og:image" content="&#x2F;xyzblog&#x2F;2018&#x2F;07&#x2F;12&#x2F;prototype&#x2F;prototype.jpg">
-<meta property="og:image" content="&#x2F;xyzblog&#x2F;2018&#x2F;07&#x2F;12&#x2F;prototype&#x2F;prototype2.jpg">
+<meta property="og:image" content="&#x2F;12&#x2F;prototype&#x2F;prototype.jpg">
+<meta property="og:image" content="&#x2F;12&#x2F;prototype&#x2F;prototype2.jpg">
 <meta property="og:updated_time" content="2019-11-09T15:32:48.426Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="&#x2F;xyzblog&#x2F;2018&#x2F;07&#x2F;12&#x2F;prototype&#x2F;prototype.jpg">
+<meta name="twitter:image" content="&#x2F;12&#x2F;prototype&#x2F;prototype.jpg">
   <!-- Canonical links -->
   <link rel="canonical" href="/2018/07/12/prototype/index.html">
   
@@ -387,7 +387,7 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <p><img src="/xyzblog/2018/07/12/prototype/prototype.jpg" alt="原型链"></p>
+        <p><img src="/12/prototype/prototype.jpg" alt="原型链"></p>
 <blockquote>
 <p>函数声明</p>
 </blockquote>
@@ -467,7 +467,7 @@ console.log(cat.constructor); // ƒ Animal(name){ this.name = name; }</code></pr
 <blockquote>
 <p>大招</p>
 </blockquote>
-<p>如果以上内容还是不太明白，我自己做了张注解图（线条有点多而杂，见谅~~），以及代码案例帮助理解<br><img src="/xyzblog/2018/07/12/prototype/prototype2.jpg" alt="图1.jpg"></p>
+<p>如果以上内容还是不太明白，我自己做了张注解图（线条有点多而杂，见谅~~），以及代码案例帮助理解<br><img src="/12/prototype/prototype2.jpg" alt="图1.jpg"></p>
 <pre><code>// 几个概念： 
 // 普通对象是new Object而来的，所以 它的构造函数就是Object
 // 函数对象是new Function而来的，所以 它的构造函数就是Function，Function、Object是new Function而来的
@@ -488,7 +488,7 @@ Object.prototype.__proto__ === null; // true
 
 Function.constructor === Function; // true
 Function.__proto__ === Function.prototype; // true
-Function.prototype.__proto__ === Object.prototype; // true</code></pre><p>关于面向对象、继承推荐一篇超赞的文章：<a href="http://cherryblog.site/javascript-oop.html" target="_blank" rel="noopener">javascript面向对象编程，带你认识封装、继承和多态</a>（侵立删），深度好文，值得一读！</p>
+Function.prototype.__proto__ === Object.prototype; // true</code></pre><p>关于面向对象、继承推荐一篇超赞的文章：<a href="http://cherryblog.site/javascript-oop.html">javascript面向对象编程，带你认识封装、继承和多态</a>（侵立删），深度好文，值得一读！</p>
 
       
     </div>
