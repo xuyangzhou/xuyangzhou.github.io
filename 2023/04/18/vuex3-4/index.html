@@ -1,0 +1,134 @@
+<!DOCTYPE html><html lang="zh"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,minimal-ui"><meta name="renderer" content="webkit"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="format-detection" content="telephone=no,email=no,adress=no"><meta name="theme-color" content="#000000"><meta http-equiv="window-target" content="_top"><title>Vuex 3 vs Vuex 4：差异对比 | Jason</title><meta name="description" content="Vuex 是 Vue.js 的官方状态管理库，用于在 Vue.js 应用中管理应用状态。Vuex 3 是用于 Vue 2 的版本，而 Vuex 4 是用于 Vue 3 的版本。下面是 Vuex 3 和 Vuex 4 在一些重要方面的异同点： 创建 Store 的方式 Vuex 3：使用 new Vuex.Store() 创建 store 实例    import Vue from &#39;vue"><meta property="og:type" content="article"><meta property="og:title" content="Vuex 3 vs Vuex 4：差异对比"><meta property="og:url" content="http://example.com/2023/04/18/vuex3-4/index.html"><meta property="og:site_name" content="Jason"><meta property="og:description" content="Vuex 是 Vue.js 的官方状态管理库，用于在 Vue.js 应用中管理应用状态。Vuex 3 是用于 Vue 2 的版本，而 Vuex 4 是用于 Vue 3 的版本。下面是 Vuex 3 和 Vuex 4 在一些重要方面的异同点： 创建 Store 的方式 Vuex 3：使用 new Vuex.Store() 创建 store 实例    import Vue from &#39;vue"><meta property="og:locale" content="zh_CN"><meta property="article:published_time" content="2023-04-18T03:01:42.000Z"><meta property="article:modified_time" content="2023-04-18T03:01:42.000Z"><meta property="article:author" content="Jason xu"><meta property="article:tag" content="vuex"><meta name="twitter:card" content="summary"><link rel="canonical" href="http://example.com/2023/04/18/vuex3-4/index.html"><link rel="alternate" href="/atom.xml" title="Jason" type="application/atom+xml"><link rel="icon" href="/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><meta name="generator" content="Hexo 7.1.1"></head><body class="main-center theme-purple" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="slimContent"><div class="navbar-header"><div class="profile-block text-center"><a id="avatar" href="https://github.com/xuyangzhou" target="_blank"><img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200"></a><h2 id="name" class="hidden-xs hidden-sm">Jason</h2><h3 id="title" class="hidden-xs hidden-sm hidden-md">鲜衣怒马少年时，一日看尽长安花</h3><small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> xi&#39;an, China</small></div><div class="search" id="search-form-wrap"><form class="search-form sidebar-form"><div class="input-group"><input type="text" class="search-form-input form-control" placeholder="搜索"> <span class="input-group-btn"><button type="submit" class="search-form-submit btn btn-flat" onclick="return!1"><i class="icon icon-search"></i></button></span></div></form><div class="ins-search"><div class="ins-search-mask"></div><div class="ins-search-container"><div class="ins-input-wrapper"><input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech> <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div><div class="ins-section-wrapper"><div class="ins-section-container"></div></div></div></div></div><button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button></div><nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation"><ul class="nav navbar-nav main-nav menu-highlight"><li class="menu-item menu-item-home"><a href="/."><i class="icon icon-home-fill"></i> <span class="menu-title">首页</span></a></li><li class="menu-item menu-item-archives"><a href="/archives"><i class="icon icon-archives-fill"></i> <span class="menu-title">归档</span></a></li><li class="menu-item menu-item-categories"><a href="/categories"><i class="icon icon-folder"></i> <span class="menu-title">分类</span></a></li><li class="menu-item menu-item-tags"><a href="/tags"><i class="icon icon-tags"></i> <span class="menu-title">标签</span></a></li></ul><ul class="social-links"><li><a href="https://github.com/xuyangzhou" target="_blank" title="Github" data-toggle="tooltip" data-placement="top"><i class="icon icon-github"></i></a></li><li><a href="https://www.jianshu.com/u/162eaf8819d3" target="_blank" title="简书" data-toggle="tooltip" data-placement="top"><i class="icon icon-简书"></i></a></li><li><a href="https://juejin.cn/user/2471357871046333" target="_blank" title="Juejin" data-toggle="tooltip" data-placement="top"><i class="icon icon-juejin"></i></a></li><li><a href="/atom.xml" target="_blank" title="Rss" data-toggle="tooltip" data-placement="top"><i class="icon icon-rss"></i></a></li></ul></nav></div></header><aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar"><div class="slimContent"><div class="widget"><h3 class="widget-title">公告</h3><div class="widget-body"><div id="board"><div class="content"><p>光景不待人，须臾发成丝</p></div></div></div></div><div class="widget"><h3 class="widget-title">分类</h3><div class="widget-body"><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/vuex/">vuex</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%A4%96%E6%96%87%E7%BF%BB%E8%AF%91/">外文翻译</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%83%E6%83%85%E7%89%A9%E8%AF%AD/">心情物语</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a><span class="category-list-count">1</span></li></ul></div></div><div class="widget"><h3 class="widget-title">标签</h3><div class="widget-body"><ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/" rel="tag">ES6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Volar/" rel="tag">Volar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/" rel="tag">js</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/map/" rel="tag">map</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/new%E7%9A%84%E8%BF%87%E7%A8%8B/" rel="tag">new的过程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/reduce/" rel="tag">reduce</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/set/" rel="tag">set</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/typescript/" rel="tag">typescript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/virtual-dom/" rel="tag">virtual-dom</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/" rel="tag">vue</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vuex/" rel="tag">vuex</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vuex-%E6%BA%90%E7%A0%81/" rel="tag">vuex 源码</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8A%A8%E7%94%BB/" rel="tag">动画</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8E%9F%E5%9E%8B/" rel="tag">原型</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%96%E6%96%87%E7%BF%BB%E8%AF%91/" rel="tag">外文翻译</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%83%E6%83%85%E7%89%A9%E8%AF%AD/" rel="tag">心情物语</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95/" rel="tag">数组方法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%97%AD%E5%8C%85/" rel="tag">闭包</a><span class="tag-list-count">1</span></li></ul></div></div><div class="widget"><h3 class="widget-title">标签云</h3><div class="widget-body tagcloud"><a href="/tags/ES6/" style="font-size:13px">ES6</a> <a href="/tags/Volar/" style="font-size:13px">Volar</a> <a href="/tags/hexo/" style="font-size:13.25px">hexo</a> <a href="/tags/js/" style="font-size:14px">js</a> <a href="/tags/map/" style="font-size:13px">map</a> <a href="/tags/new%E7%9A%84%E8%BF%87%E7%A8%8B/" style="font-size:13px">new的过程</a> <a href="/tags/reduce/" style="font-size:13px">reduce</a> <a href="/tags/set/" style="font-size:13px">set</a> <a href="/tags/typescript/" style="font-size:13.25px">typescript</a> <a href="/tags/virtual-dom/" style="font-size:13px">virtual-dom</a> <a href="/tags/vue/" style="font-size:13.25px">vue</a> <a href="/tags/vuex/" style="font-size:13.25px">vuex</a> <a href="/tags/vuex-%E6%BA%90%E7%A0%81/" style="font-size:13.5px">vuex 源码</a> <a href="/tags/%E5%8A%A8%E7%94%BB/" style="font-size:13px">动画</a> <a href="/tags/%E5%8E%9F%E5%9E%8B/" style="font-size:13px">原型</a> <a href="/tags/%E5%A4%96%E6%96%87%E7%BF%BB%E8%AF%91/" style="font-size:13.75px">外文翻译</a> <a href="/tags/%E5%BF%83%E6%83%85%E7%89%A9%E8%AF%AD/" style="font-size:13px">心情物语</a> <a href="/tags/%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95/" style="font-size:13px">数组方法</a> <a href="/tags/%E9%97%AD%E5%8C%85/" style="font-size:13px">闭包</a></div></div><div class="widget"><h3 class="widget-title">归档</h3><div class="widget-body"><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">五月 2023</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">四月 2023</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">三月 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">2</span></li></ul></div></div><div class="widget"><h3 class="widget-title">最新文章</h3><div class="widget-body"><ul class="recent-post-list list-unstyled no-thumbnail"><li><div class="item-inner"><p class="item-category"><a class="category-link" href="/categories/js/">js</a></p><p class="item-title"><a href="/2023/05/08/js10/" class="title">10个让你爱不释手的一行Javascript代码</a></p><p class="item-date"><time datetime="2023-05-08T03:01:42.000Z" itemprop="datePublished">2023-05-08</time></p></div></li><li><div class="item-inner"><p class="item-category"><a class="category-link" href="/categories/js/">js</a></p><p class="item-title"><a href="/2023/05/07/js-pithy/" class="title">10个JavaScript简洁编码技巧</a></p><p class="item-date"><time datetime="2023-05-07T03:01:42.000Z" itemprop="datePublished">2023-05-07</time></p></div></li><li><div class="item-inner"><p class="item-category"><a class="category-link" href="/categories/%E5%A4%96%E6%96%87%E7%BF%BB%E8%AF%91/">外文翻译</a></p><p class="item-title"><a href="/2023/05/06/animatingTheUnanimatable/" class="title">[译] 动画无法动画化的元素</a></p><p class="item-date"><time datetime="2023-05-06T03:01:42.000Z" itemprop="datePublished">2023-05-06</time></p></div></li><li><div class="item-inner"><p class="item-category"><a class="category-link" href="/categories/js/">js</a></p><p class="item-title"><a href="/2023/05/04/typescript-eg/" class="title">10个超级实用的typescript使用技巧</a></p><p class="item-date"><time datetime="2023-05-04T04:00:00.000Z" itemprop="datePublished">2023-05-04</time></p></div></li><li><div class="item-inner"><p class="item-category"><a class="category-link" href="/categories/js/">js</a></p><p class="item-title"><a href="/2023/04/20/javascript/" class="title">[译] ECMAScript 2023有哪些新特性</a></p><p class="item-date"><time datetime="2023-04-20T03:01:42.000Z" itemprop="datePublished">2023-04-20</time></p></div></li></ul></div></div></div></aside><aside class="sidebar sidebar-toc collapse in" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar"><div class="slimContent"><nav id="toc" class="article-toc"><h3 class="toc-title">文章目录</h3><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA-Store-%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="toc-number">1.</span> <span class="toc-text">创建 Store 的方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E7%BB%84%E4%BB%B6%E4%B8%AD%E4%BD%BF%E7%94%A8-Store"><span class="toc-number">2.</span> <span class="toc-text">在组件中使用 Store</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0%E7%9A%84%E7%94%A8%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text">辅助函数的用法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%8D%E5%BA%94%E5%BC%8F%E7%9A%84%E6%94%B9%E8%BF%9B"><span class="toc-number">4.</span> <span class="toc-text">响应式的改进</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vuex4-%E6%94%AF%E6%8C%81%E5%A4%9A%E4%BE%8B%E6%A8%A1%E5%BC%8F"><span class="toc-number">5.</span> <span class="toc-text">Vuex4 支持多例模式</span></a></li></ol></nav></div></aside><main class="main" role="main"><div class="content"><article id="post-vuex3-4" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting"><div class="article-header"><h1 class="article-title" itemprop="name">Vuex 3 vs Vuex 4：差异对比</h1><div class="article-meta"><span class="article-date"><i class="icon icon-calendar-check"></i> <a href="/2023/04/18/vuex3-4/" class="article-date"><time datetime="2023-04-18T03:01:42.000Z" itemprop="datePublished">2023-04-18</time> </a></span><span class="article-category"><i class="icon icon-folder"></i> <a class="article-category-link" href="/categories/vuex/">vuex</a> </span><span class="article-tag"><i class="icon icon-tags"></i> <a class="article-tag-link-link" href="/tags/vuex/" rel="tag">vuex</a> </span><span class="article-read hidden-xs"><i class="icon icon-eye-fill" aria-hidden="true"></i> <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span> </span></span><span class="post-comment"><i class="icon icon-comment"></i> <a href="/2023/04/18/vuex3-4/#comments" class="article-comment-link">评论</a></span> <span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1.1k(字)</span> <span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 5(分)</span></div></div><div class="article-entry marked-body" itemprop="articleBody"><p>Vuex 是 Vue.js 的官方状态管理库，用于在 Vue.js 应用中管理应用状态。Vuex 3 是用于 Vue 2 的版本，而 Vuex 4 是用于 Vue 3 的版本。下面是 Vuex 3 和 Vuex 4 在一些重要方面的异同点：</p><h3 id="创建-Store-的方式"><a href="#创建-Store-的方式" class="headerlink" title="创建 Store 的方式"></a>创建 Store 的方式</h3><ul><li>Vuex 3：使用 <code>new Vuex.Store()</code> 创建 store 实例</li></ul><pre><code>import Vue from &#39;vue&#39;
+import Vuex from &#39;vuex&#39;
+​
+Vue.use(Vuex)
+​
+const store = new Vuex.Store(&#123;
+  // 配置项
+&#125;)
+​
+export default store
+</code></pre><ul><li>Vuex 4：使用 <code>createStore</code> 函数创建 store 实例</li></ul><pre><code>import &#123; createStore &#125; from &#39;vuex&#39;
+​
+const store = createStore(&#123;
+  // 配置项
+&#125;)
+​
+export default store
+</code></pre><p>Vuex 4 中使用 <code>createStore</code> 函数来创建 store 实例，而不是直接在 Vue 实例上挂载。</p><h3 id="在组件中使用-Store"><a href="#在组件中使用-Store" class="headerlink" title="在组件中使用 Store"></a>在组件中使用 Store</h3><ul><li>Vuex 3：使用 <code>this.$store</code> 访问 store 实例，通过 <code>this.$store.state</code> 访问状态，通过 <code>this.$store.commit()</code> 进行提交 mutation，通过 <code>this.$store.dispatch()</code> 进行分发 action。</li></ul><pre><code>export default &#123;
+  computed: &#123;
+    count() &#123;
+      return this.$store.state.count
+    &#125;
+  &#125;,
+  methods: &#123;
+    increment() &#123;
+      this.$store.commit(&#39;increment&#39;)
+    &#125;,
+    incrementAsync() &#123;
+      this.$store.dispatch(&#39;incrementAsync&#39;)
+    &#125;
+  &#125;
+&#125;
+</code></pre><ul><li>Vuex 4：使用 <code>useStore</code> 函数来获取 store 实例，通过 <code>store.state</code> 访问状态，通过 <code>store.commit()</code> 进行提交 mutation，通过 <code>store.dispatch()</code> 进行分发 action。</li></ul><pre><code>import &#123; useStore &#125; from &#39;vuex&#39;
+​
+export default &#123;
+  setup() &#123;
+    const store = useStore()
+    const count = computed(() =&gt; store.state.count)
+​
+    const increment = () =&gt; &#123;
+      store.commit(&#39;increment&#39;)
+    &#125;
+​
+    const incrementAsync = () =&gt; &#123;
+      store.dispatch(&#39;incrementAsync&#39;)
+    &#125;
+​
+    return &#123;
+      count,
+      increment,
+      incrementAsync
+    &#125;
+  &#125;
+&#125;
+</code></pre><p>虽然 Vuex4 推荐使用更符合 Composition API 风格的 <code>useStore()</code> 来获取 <code>store</code> 实例。但是并没有移除 <code>this.$store</code>，但是在 <code>&lt;template&gt;</code> 和 <code>Vue2</code> 选项式写法中还是支持使用 <code>$store</code> 的。</p><h3 id="辅助函数的用法"><a href="#辅助函数的用法" class="headerlink" title="辅助函数的用法"></a>辅助函数的用法</h3><ul><li>Vuex 3：使用 <code>mapState</code>、<code>mapGetters</code>、<code>mapMutations</code> 和 <code>mapActions</code> 辅助函数来进行映射，简化在组件中对 store 的访问。</li></ul><pre><code>import &#123; mapState, mapGetters, mapMutations, mapActions &#125; from &#39;vuex&#39;
+​
+export default &#123;
+  computed: &#123;
+    ...mapState([&#39;count&#39;]),
+    ...mapGetters([&#39;doubleCount&#39;]),
+  &#125;,
+  methods: &#123;
+    ...mapMutations([&#39;increment&#39;]),
+    ...mapActions([&#39;incrementAsync&#39;]),
+  &#125;
+&#125;
+</code></pre><ul><li>Vuex 4：使用 Composition API 中的 <code>computed</code> 函数和普通的 JavaScript 函数来实现类似的功能。</li></ul><pre><code>import &#123; computed, useStore &#125; from &#39;vuex&#39;
+​
+export default &#123;
+  setup() &#123;
+    const store = useStore()
+​
+    const count = computed(() =&gt; store.state.count)
+    const doubleCount = computed(() =&gt; store.getters.doubleCount)
+​
+    const increment = () =&gt; &#123;
+      store.commit(&#39;increment&#39;)
+    &#125;
+​
+    const incrementAsync = () =&gt; &#123;
+      store.dispatch(&#39;incrementAsync&#39;)
+    &#125;
+​
+    return &#123;
+      count,
+      doubleCount,
+      increment,
+      incrementAsync
+    &#125;
+  &#125;
+&#125;
+</code></pre><p>Vuex4 支持选项式写法的辅助函数，在使用时和 Vuex3 一模一样的。但是需要注意辅助函数不能在组合式写法 <code>setup</code> 中使用。</p><h3 id="响应式的改进"><a href="#响应式的改进" class="headerlink" title="响应式的改进"></a>响应式的改进</h3><ul><li>Vuex 3：使用 Vue 2 的响应式系统 ( Object.defineProperty ) 进行状态的监听和更新。</li><li>Vuex 4：使用 Vue 3 的响应式系统 ( proxy ) 进行状态的监听和更新，可以利用 Composition API 中的 <code>reactive</code> 和 <code>computed</code> 函数进行更加灵活和高效的状态管理。</li></ul><p>实质上这是 Vue2 和 Vue3 的区别，只是由于 Vue 2 匹配的 Vuex 3，Vue 3 匹配的 Vuex 4 的原因，严格来说不能算作 Vuex3 与 Vuex4 的不同。</p><h3 id="Vuex4-支持多例模式"><a href="#Vuex4-支持多例模式" class="headerlink" title="Vuex4 支持多例模式"></a>Vuex4 支持多例模式</h3><p>Vuex 3 是单例模式的，即整个应用只能有一个全局的 Vuex Store 实例。而在 Vuex 4 中，你可以通过 <code>useStore</code> 函数在不同组件中创建多个独立的 Vuex Store 实例，从而支持多例模式。</p><p>以下是一个示例展示了如何在 Vuex 4 中使用 <code>useStore</code> 辅助函数创建多个独立的 Vuex Store 实例：</p><pre><code>&lt;template&gt;
+  &lt;div&gt;
+    &lt;p&gt;Counter 1: &#123;&#123; counter1 &#125;&#125;&lt;/p&gt;
+    &lt;p&gt;Counter 2: &#123;&#123; counter2 &#125;&#125;&lt;/p&gt;
+    &lt;button @click=&quot;incrementCounter1&quot;&gt;Increment Counter 1&lt;/button&gt;
+    &lt;button @click=&quot;incrementCounter2&quot;&gt;Increment Counter 2&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+​
+&lt;script&gt;
+import &#123; useStore &#125; from &#39;vuex&#39;
+​
+export default &#123;
+  setup() &#123;
+    // 使用 useStore 辅助函数创建 Vuex Store 实例
+    const store1 = useStore(&#39;store1&#39;)
+    const store2 = useStore(&#39;store2&#39;)
+​
+    // 通过 store1.state.count 获取第一个 Store 的状态
+    const count1 = store1.state.count
+    // 通过 store2.state.count 获取第二个 Store 的状态
+    const count2 = store2.state.count
+​
+    // 通过 store1.commit() 提交 mutations 到第一个 Store
+    const incrementCounter1 = () =&gt; &#123;
+      store1.commit(&#39;increment&#39;)
+    &#125;
+​
+    // 通过 store2.commit() 提交 mutations 到第二个 Store
+    const incrementCounter2 = () =&gt; &#123;
+      store2.commit(&#39;increment&#39;)
+    &#125;
+​
+    return &#123;
+      count1,
+      count2,
+      incrementCounter1,
+      incrementCounter2
+    &#125;
+  &#125;
+&#125;
+&lt;/script&gt;
+</code></pre><p>上述示例展示了如何在 Vue 组件中使用 <code>useStore</code> 辅助函数创建多个独立的 Vuex Store 实例，并通过这些实例分别访问和修改各自的状态和 mutations。这是 Vuex 4 相对于 Vuex 3 的一个重要的改进，使得 Vuex 在支持多例模式的场景下更加灵活和可扩展。</p><p>参考链接：</p><ol><li>Vuex 4 官方文档：<a target="_blank" rel="noopener" href="https://vuex.vuejs.org/zh/">https://vuex.vuejs.org/zh/</a></li><li>Vuex 3 官方文档：<a target="_blank" rel="noopener" href="https://v3.vuex.vuejs.org/zh/">https://v3.vuex.vuejs.org/zh/</a></li></ol></div><div class="article-footer"><blockquote class="mt-2x"><ul class="post-copyright list-unstyled"><li class="post-copyright-link hidden-xs"><strong>本文链接：</strong> <a href="http://example.com/2023/04/18/vuex3-4/" title="Vuex 3 vs Vuex 4：差异对比" target="_blank" rel="external">http://example.com/2023/04/18/vuex3-4/</a></li><li class="post-copyright-license"><strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！</li></ul></blockquote><div class="panel panel-default panel-badger"><div class="panel-body"><figure class="media"><div class="media-left"><a href="https://github.com/xuyangzhou" target="_blank" class="img-burn thumb-sm visible-lg"><img src="/images/avatar.jpg" class="img-rounded w-full" alt=""></a></div><div class="media-body"><h3 class="media-heading"><a href="https://github.com/xuyangzhou" target="_blank"><span class="text-dark">Jason</span><small class="ml-1x">鲜衣怒马少年时，一日看尽长安花</small></a></h3><div>个人简介。</div></div></figure></div></div></div></article><section id="comments"><div id="vcomments"></div></section></div><nav class="bar bar-footer clearfix" data-stick-bottom><div class="bar-inner"><ul class="pager pull-left"><li class="prev"><a href="/2023/04/20/set-map/" title="10个超级实用的Set、Map使用技巧"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a></li><li class="next"><a href="/2023/04/14/plate/" title="[译] javascript 检测剪贴板中的内容类型"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a></li><li class="toggle-toc"><a class="toggle-btn" data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button"><span>[&nbsp;</span><span>文章目录</span> <i class="text-collapsed icon icon-anchor"></i> <i class="text-in icon icon-close"></i> <span>]</span></a></li></ul><div class="bar-right"><div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div></div></div></nav></main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter"><ul class="social-links"><li><a href="https://github.com/xuyangzhou" target="_blank" title="Github" data-toggle="tooltip" data-placement="top"><i class="icon icon-github"></i></a></li><li><a href="https://www.jianshu.com/u/162eaf8819d3" target="_blank" title="简书" data-toggle="tooltip" data-placement="top"><i class="icon icon-简书"></i></a></li><li><a href="https://juejin.cn/user/2471357871046333" target="_blank" title="Juejin" data-toggle="tooltip" data-placement="top"><i class="icon icon-juejin"></i></a></li><li><a href="/atom.xml" target="_blank" title="Rss" data-toggle="tooltip" data-placement="top"><i class="icon icon-rss"></i></a></li></ul><div class="copyright"><div class="publishby">Theme by <a href="https://github.com/cofess" target="_blank">cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.</div></div></footer><script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script><script>window.jQuery||document.write('<script src="js/jquery.min.js"><\/script>')</script><script src="/js/plugin.min.js"></script><script src="/js/application.js"></script><script>window.INSIGHT_CONFIG={TRANSLATION:{POSTS:"文章",PAGES:"页面",CATEGORIES:"分类",TAGS:"标签",UNTITLED:"(未命名)"},ROOT_URL:"/",CONTENT_URL:"/content.json"}</script><script src="/js/insight.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="//cdn.jsdelivr.net/npm/valine"></script><script type="text/javascript">var GUEST=["nick","mail","link"],meta=(meta="nick,mail,link").split(",").filter(function(e){return-1<GUEST.indexOf(e)});new Valine({el:"#vcomments",verify:!1,notify:!1,appId:"",appKey:"",placeholder:"Just go go",avatar:"mm",meta:meta,pageSize:"10",visitor:!1})</script></body></html>
